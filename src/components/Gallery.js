@@ -1,8 +1,8 @@
 //all components rendered have to be in one parent
 // have to add  rel="noreferrer" when using  target='_blank' because of a security risk - a message from terminal
-import React from 'react';             
+import React from 'react';        // import from react because using react component (class Gallery extends React.Component)
 import { Card, Col, Row } from 'react-bootstrap';  //ctrl backspace autocomplete from Card component   import from bootstrap  
-import ActorModel from './ActorModel';  //capital letters at the start of the names. file name has to be the same - case sensitive
+// import ActorModel from './ActorModel';  //capital letters at the start of the names. file name has to be the same - case sensitive
 
 
 class Gallery extends React.Component{
@@ -17,8 +17,6 @@ class Gallery extends React.Component{
         this.setState(
             {filter: val}  // from value on input element the new state is changed
             )
-        // var a = event.target.value
-        // console.log(a);
     }
 
     render(){
@@ -43,7 +41,7 @@ class Gallery extends React.Component{
        
           )
       })
-    // onChange={(event)=>{this.changefilter(event.target.value)
+    // onChange={(event)=>{this.changefilter(event.target.value) pass the event to the function to target the value of the state and return 
     return(
             <div>
                 <input placeholder="Filter" type='text' value={this.state.filter}  onChange={(event)=>{this.changefilter(event.target.value)}}/>
