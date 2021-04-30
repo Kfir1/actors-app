@@ -13,10 +13,11 @@ class ActorModel{
 }
     age= () => {
      const now  =  moment();  // now is the actual moment  https://momentjs.com/docs/#/parsing/
-        
+      // see time of this moment from method moment();
+     // console.log(now);
         return now.diff(this.Bday, 'years')  // diff is a method that works on moment() value. 
     }
-
+  
 }
 
 export default ActorModel;

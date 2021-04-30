@@ -3,7 +3,7 @@ import './App.css';
 import ActorModel from './components/ActorModel'; //ctrl spacebar for auto complete intellisence   import from ActorModel component
 import Gallery from './components/Gallery';  // ctrl spacebar for auto complete intellisence     import from Gallery component
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import moment from 'moment' 
 
 
 function App() {
@@ -66,8 +66,9 @@ function App() {
     },
 ]
 // see time of this moment from method moment();
-// const now = moment();
-// console.log(now);
+const now = moment();
+console.log(now);
+
 const actorsList = actorsArray.map((actor) => new ActorModel(actor.fName, actor.lName, actor.bday, actor.imgUrl, actor.imdbLink))
   return (
     <div className="App">

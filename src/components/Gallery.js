@@ -12,7 +12,7 @@ class Gallery extends React.Component{
     this.state = {
         filter: '',
     };
-    }
+    }  // the event from (event)=>{this.changefilter(event.target.value) is passed as val(arbitrary name)  
     changefilter = (val) =>{
         this.setState(
             {filter: val}  // from value on input element the new state is changed
@@ -25,6 +25,7 @@ class Gallery extends React.Component{
         const filteredActors = this.props.listOfActors.filter((actor) => { //imported array listOfActors from App.js from props 
             return `${actor.Fname} ${actor.Lname}`.toLowerCase().includes(this.state.filter.toLowerCase())  
             //  filteredActors will be the new array filtered. filter is a loop. actor is the item from an array. this.state.filter.toLowerCase() 
+            // Fname Lname have capital letters in Gallery.js, unlike in app.js
         });
  
       const newArrayOfActors = filteredActors.map((actor)=> {
@@ -42,7 +43,7 @@ class Gallery extends React.Component{
        
           )
       })
-    
+    // onChange={(event)=>{this.changefilter(event.target.value)
     return(
             <div>
                 <input placeholder="Filter" type='text' value={this.state.filter}  onChange={(event)=>{this.changefilter(event.target.value)}}/>
